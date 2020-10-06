@@ -1,0 +1,17 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class City extends Model
+{
+    protected $guarded = [];
+    protected $table = 'cities';
+    protected $fillable = ['province_id','city_id','name'];
+
+    public function province(){
+        return $this->belongsTo(Province::class, 'province_id');
+                                        // yg mau diambil , yg mau make
+      }
+}
